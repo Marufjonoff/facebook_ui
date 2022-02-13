@@ -83,7 +83,7 @@ class _FacebookUIState extends State<FacebookUI> {
       child: Scaffold(
         backgroundColor: Colors.grey.shade400,
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
           elevation: 0,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -96,7 +96,7 @@ class _FacebookUIState extends State<FacebookUI> {
                     backgroundColor: Colors.grey.withOpacity(0.3),
                     child: IconButton(
                       onPressed: (){},
-                      icon: Icon(Icons.search, color: Colors.black87, size: 19.5,),
+                      icon: Icon(Icons.search, color: Colors.white, size: 19.5,),
                     ),
                   ),
                   SizedBox(
@@ -107,44 +107,34 @@ class _FacebookUIState extends State<FacebookUI> {
                     backgroundColor: Colors.grey.withOpacity(0.3),
                     child: IconButton(
                       onPressed: (){},
-                      icon: Icon(Icons.camera_alt, color: Colors.black87, size: 19.5,),
+                      icon: Icon(Icons.camera_alt, color: Colors.white, size: 19.5,),
                     ),
                   ),
                 ],
               )
             ],
           ),
-          bottom: TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.home_sharp, size: 30, color: Colors.black.withOpacity(0.6),),),
-              Tab(icon: Icon(Icons.people_alt_sharp, size: 30, color: Colors.black.withOpacity(0.6),),),
-              Tab(icon: Icon(Icons.tv_rounded, size: 30, color: Colors.black.withOpacity(0.6),),),
-              Tab(icon: Icon(Icons.perm_identity, size: 30, color: Colors.black.withOpacity(0.6),),),
-              Tab(icon: Icon(Icons.notifications_none_sharp, size: 30, color: Colors.black.withOpacity(0.6),),),
-              Tab(icon: Icon(Icons.list, size: 30, color: Colors.black.withOpacity(0.6),),),
-            ],
-          ),
         ),
         body: SingleChildScrollView(
-          physics: ScrollPhysics(),
+          physics: const ScrollPhysics(),
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
 
               // #search and login
               Padding(
-                padding: EdgeInsets.only(top: 1, bottom: 0.5),
+                padding: const EdgeInsets.only(top: 1, bottom: 0.5),
                 child: Container(
                   height: 60,
-                  color: Colors.white,
+                  color: Colors.black,
                   width: double.infinity,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Container(
+                      const Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: SizedBox(
                           height: 40,
                           width: 40,
                           child: CircleAvatar(
@@ -155,7 +145,7 @@ class _FacebookUIState extends State<FacebookUI> {
                       ),
 
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Container(
                           height: 40,
                           width: MediaQuery.of(context).size.width - 70,
@@ -166,7 +156,7 @@ class _FacebookUIState extends State<FacebookUI> {
                               color: Colors.grey
                             )
                           ),
-                          child: TextField(
+                          child: const TextField(
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 15, bottom: 10),
                               border: InputBorder.none,
@@ -184,7 +174,7 @@ class _FacebookUIState extends State<FacebookUI> {
               // #catagory
               Container(
                 height: 45,
-                color: Colors.white,
+                color: Colors.black,
                 width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
@@ -206,10 +196,10 @@ class _FacebookUIState extends State<FacebookUI> {
                                     SizedBox(
                                       width: 5,
                                     ),
-                                    Text('Live'),
+                                    Text('Live', style: TextStyle(color: Colors.white),),
                                   ],
                                 ),
-                                color: Colors.white,
+                                color: Colors.black,
                                 margin: EdgeInsets.only(right: 0.5),
                             )
                         ),
@@ -221,17 +211,17 @@ class _FacebookUIState extends State<FacebookUI> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
-                                    child:Icon(Icons.image, color: Colors.green,),
+                                    child:const Icon(Icons.image, color: Colors.green,),
                                     alignment: Alignment.center,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
-                                  Text('Photo'),
+                                  const Text('Photo', style: TextStyle(color: Colors.white),),
                                 ],
                               ),
-                              color: Colors.white,
-                              margin: EdgeInsets.only(right: 0.5),
+                              color: Colors.black,
+                              margin: const EdgeInsets.only(right: 0.5),
                             )
                         ),
 
@@ -242,16 +232,16 @@ class _FacebookUIState extends State<FacebookUI> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
-                                    child:Icon(Icons.location_on, color: Colors.red,),
+                                    child:const Icon(Icons.location_on, color: Colors.red,),
                                     alignment: Alignment.center,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
-                                  Text('Check in'),
+                                  const Text('Check in', style: TextStyle(color: Colors.white),),
                                 ],
                               ),
-                              color: Colors.white,
+                              color: Colors.black,
                             )
                         ),
                       ],
@@ -266,17 +256,17 @@ class _FacebookUIState extends State<FacebookUI> {
                 child: Container(
                   height: MediaQuery.of(context).size.height / 3,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.white,
+                  color: Colors.black,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        physics: ScrollPhysics(),
+                        physics: const ScrollPhysics(),
                         shrinkWrap: true,
                         itemCount: _person.length,
                         itemBuilder: (context, index) {
                         return Padding(
-                          padding: index == 0 ? EdgeInsets.only(left: 10, right: 5) : EdgeInsets.symmetric(horizontal: 5),
+                          padding: index == 0 ? const EdgeInsets.only(left: 10, right: 5) : const EdgeInsets.symmetric(horizontal: 5),
                           child: Stack(
                             children: [
                               // #story
@@ -319,7 +309,7 @@ class _FacebookUIState extends State<FacebookUI> {
 
                               // #name
                               Positioned(
-                                  child: Text(_listName[index], style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),),
+                                  child: Text(_listName[index], style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.white),),
                                     left: 10,
                                 bottom: 10,
                               )
@@ -333,19 +323,15 @@ class _FacebookUIState extends State<FacebookUI> {
 
               // #content
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 5),
                 child: ListView.builder(
-                  physics: ScrollPhysics(),
+                  physics: const ScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: _story.length,
                   itemBuilder: (context, index) {
                     return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 5),
                         child: Container(
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .height / 1.5,
                           width: double.infinity,
                           child: Column(
                             children: [
@@ -353,6 +339,7 @@ class _FacebookUIState extends State<FacebookUI> {
                               // #bio user
                               Container(
                                 height: 60,
+                                color: Colors.black,
                                 width: MediaQuery.of(context).size.width,
                                 child: Row(
                                   children: [
@@ -361,9 +348,9 @@ class _FacebookUIState extends State<FacebookUI> {
                                     Container(
                                       height: 60,
                                       width: 60,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10, top: 5, right: 8),
+                                        padding: const EdgeInsets.only(left: 10, top: 5, right: 8),
                                         child: CircleAvatar(
                                           radius: 25,
                                           foregroundImage: AssetImage(_person[index]),
@@ -374,7 +361,6 @@ class _FacebookUIState extends State<FacebookUI> {
                                     //#text person
                                     Container(
                                       width: MediaQuery.of(context).size.width - 60,
-                                      height: 60,
                                       color: Colors.white,
                                       child: Row(
                                         children: [
@@ -385,29 +371,31 @@ class _FacebookUIState extends State<FacebookUI> {
                                               mainAxisAlignment: MainAxisAlignment.end,
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                Text(_user[index], style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: Colors.black),),
+                                                Text(_user[index], style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: Colors.white),),
                                                 SizedBox(height: 2,),
-                                                Text('1 hr ago', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300, color: Colors.black38),),
+                                                Text('1 hr ago', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300, color: Colors.white),),
                                                 SizedBox(height: 8,),
                                               ],
                                             ),
+                                            color: Colors.black,
                                           ),
 
                                           // #IconButton
                                           Container(
                                             width: 100,
                                             height: 60,
+                                            color: Colors.black,
                                             child: Row(
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 IconButton(
                                                   onPressed: (){},
-                                                  icon: Icon(Icons.more_horiz_rounded, color: Colors.black54, size: 28,),
+                                                  icon: Icon(Icons.more_horiz_rounded, color: Colors.white, size: 28,),
                                                 ),
                                                 IconButton(
                                                   onPressed: (){},
-                                                  icon: Icon(Icons.close, color: Colors.black54, size: 28,),
+                                                  icon: Icon(Icons.close, color: Colors.white, size: 28,),
                                                 ),
                                               ],
                                             ),
@@ -423,40 +411,37 @@ class _FacebookUIState extends State<FacebookUI> {
                               // #content
                               Container(
                                 height: 80,
-                                color: Colors.white,
+                                color: Colors.black,
                                 width: MediaQuery.of(context).size.width,
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 5, right: 6, left: 10, bottom: 5),
-                                  child: Text(_wisdom[index], style: TextStyle(fontSize: 15),),
+                                  child: Text(_wisdom[index], style: const TextStyle(fontSize: 15, color: Colors.white),),
                                 ),
                               ),
 
                               // #images content
-                              Container(
-                                height: MediaQuery.of(context).size.height / 1.5 - 230,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(_story[index]),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
+                             ClipRRect(
+                               child: Image(
+                                 image: AssetImage(_story[index]),
+                               ),
+                             ),
 
                               // #fovorite and likes
                               Container(
                                 height: 90,
-                                color: Colors.white,
+                                color: Colors.black,
                                 width: MediaQuery.of(context).size.width,
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10),
                                   child: Container(
                                     height: 90,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     width: MediaQuery.of(context).size.width,
                                     child: Column(
                                       children: [
                                         Expanded(
                                           child: Container(
+
                                             child: Row(
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -474,22 +459,22 @@ class _FacebookUIState extends State<FacebookUI> {
                                                           });
                                                         },
                                                         icon: _isLike == true ? Icon(Icons.favorite, color: Colors.red,)
-                                                            : Icon(FontAwesomeIcons.thumbsUp, size: 20, color: Colors.black54,)
+                                                            : Icon(FontAwesomeIcons.thumbsUp, size: 20, color: Colors.white,)
                                                       ),
-                                                      Text('222', style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black54),
+                                                      Text('222', style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
                                                       textAlign: TextAlign.start,
                                                       )
                                                     ],
                                                   ),
                                                 ),
-                                                Text('43 comments 6 shares', style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black54),),
+                                                Text('43 comments 6 shares', style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),),
                                               ],
                                             ),
                                           ),
                                         ),
-                                        Divider(height: 0.8, color: Colors.grey,),
                                         Expanded(
                                           child: Container(
+                                            color: Colors.black,
                                               child: Row(
                                                 children: [
 
@@ -509,7 +494,7 @@ class _FacebookUIState extends State<FacebookUI> {
                                                             Text('Like', style: TextStyle(color: Colors.blue),),
                                                           ],
                                                         ),
-                                                        color: Colors.white,
+                                                        color: Colors.black,
                                                         margin: EdgeInsets.only(right: 0.5),
                                                       )
                                                   ),
@@ -521,16 +506,16 @@ class _FacebookUIState extends State<FacebookUI> {
                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                           children: [
                                                             Container(
-                                                              child:FaIcon(FontAwesomeIcons.commentAlt, color: Colors.black54, size: 20,),
+                                                              child:FaIcon(FontAwesomeIcons.commentAlt, color: Colors.white, size: 20,),
                                                               alignment: Alignment.center,
                                                             ),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               width: 5,
                                                             ),
-                                                            Text('Comment'),
+                                                            Text('Comment', style: TextStyle(color: Colors.white),),
                                                           ],
                                                         ),
-                                                        color: Colors.white,
+                                                        color: Colors.black,
                                                         margin: EdgeInsets.only(right: 0.5),
                                                       )
                                                   ),
@@ -542,16 +527,16 @@ class _FacebookUIState extends State<FacebookUI> {
                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                           children: [
                                                             Container(
-                                                              child:FaIcon(FontAwesomeIcons.share, color: Colors.black54, size: 20,),
+                                                              child:FaIcon(FontAwesomeIcons.share, color: Colors.white, size: 20,),
                                                               alignment: Alignment.center,
                                                             ),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               width: 5,
                                                             ),
-                                                            Text('Share'),
+                                                            Text('Share', style: TextStyle(color: Colors.white),),
                                                           ],
                                                         ),
-                                                        color: Colors.white,
+                                                        color: Colors.black,
                                                       )
                                                   ),
                                                 ],
